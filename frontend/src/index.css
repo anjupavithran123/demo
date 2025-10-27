@@ -1,0 +1,64 @@
+/* index.css or component CSS */
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* === 3D Background Animations & Utilities === */
+@layer utilities {
+  /* Animation classes */
+  .animate-blob-fast {
+    animation: blob 8s cubic-bezier(.64, .04, .35, 1) infinite;
+  }
+
+  .animate-blob-slow {
+    animation: blob 12s cubic-bezier(.64, .04, .35, 1) infinite;
+  }
+
+  .animate-slow-rotate {
+    animation: slow-rotate 16s linear infinite;
+  }
+
+  /* Custom blur utilities (optional) */
+  .blur-2xl {
+    filter: blur(28px);
+  }
+
+  .blur-3xl {
+    filter: blur(40px);
+  }
+}
+
+/* === Keyframes === */
+@keyframes blob {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  33% {
+    transform: translate3d(20px, -30px, 0) scale(1.05);
+  }
+  66% {
+    transform: translate3d(-20px, 20px, 0) scale(0.95);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes slow-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* === Respect Reduced Motion Settings === */
+@media (prefers-reduced-motion: reduce) {
+  .animate-blob-fast,
+  .animate-blob-slow,
+  .animate-slow-rotate {
+    animation: none !important;
+  }
+}
