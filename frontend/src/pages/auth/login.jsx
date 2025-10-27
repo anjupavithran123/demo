@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ThreeDBackground from "../../components/ThreeDBackground";
+import { Link } from "react-router-dom";
+
 import api from "../../lib/api";
 
 const Login = () => {
@@ -88,9 +90,8 @@ const Login = () => {
 
           <p className="text-center text-sm text-white/70 mt-4">
             Don’t have an account?{" "}
-            <a href="/signup" className="text-blue-300 underline">
-              Sign up
-            </a>
+            <Link to="/signup">Sign Up</Link>
+
           </p>
         </form>
       </div>
