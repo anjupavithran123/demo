@@ -11,7 +11,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
-      <Route path="/workspace/:id" element={<WorkspaceLayout />} />
+      <Route path="/workspace/1" element={<WorkspaceLayout />} />
       <Route path="/chatpannel" element={<ChatPanel />} />
       <Route path="/profile" element={<ProfilePanel />} />
 
