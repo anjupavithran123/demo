@@ -45,8 +45,6 @@ app.set("io", io);
 const __dirname = path.resolve();
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
-// Health route for Render / load balancer checks
-app.get("/health", (req, res) => res.json({ ok: true }));
 
 // Helpful 404 logger for debugging on Render (optional, but useful)
 app.use((req, res, next) => {
